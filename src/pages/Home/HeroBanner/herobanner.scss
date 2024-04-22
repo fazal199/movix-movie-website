@@ -1,0 +1,122 @@
+@import "../../../mixins.scss";
+
+.heroBanner {
+  position: relative;
+  overflow: hidden;
+  box-sizing: content-box;
+  padding: 13rem 0;
+
+  .opacity-layer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    box-sizing: content-box;
+    filter: blur(5px);
+    top: 13px;
+    background: linear-gradient(to top, #04152d 4%, transparent, transparent);
+  }
+}
+.backdrop-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  .lazy-load-image-background {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      opacity: 0.4 !important;
+    }
+  }
+}
+
+.heroBannerContent {
+  color: white;
+  text-align: center;
+  background: transparent;
+  z-index: 2;
+  position: relative;
+
+  .title {
+    font-size: 2.3rem;
+    @include sm{
+        font-size: 4rem;
+    }
+
+    @include xl{
+      font-size: 5rem;
+    }
+
+    .main-name {
+      background: var(--gradient);
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .subtitle {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+
+    @include sm{
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.searchInput {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+
+  @include sm{
+    width: 80%;
+  }
+
+  input[type="search"] {
+    display: block;
+    margin: 0 auto;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 0 5px white;
+    border-radius: 2rem;
+
+    @include sm{
+       font-size: 1.2rem;
+    }
+  }
+
+  button {
+    position: absolute;
+    font-size: 1.2rem;
+    color: white;
+    background: var(--gradient);
+    border: none;
+    padding: 0.8rem 1rem;
+    top: 4px;
+    letter-spacing: 2px;
+    border-radius: 0px 32px 32px 0px;
+    right: 0px;
+    cursor: pointer;
+    font-family: Inter;
+    font-weight: bold;
+
+    @include sm{
+       font-size: 1.4rem;
+       padding: 0.9rem 1.9rem;
+       top: 2.5px;
+    }
+  }
+}
